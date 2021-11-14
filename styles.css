@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Primary colors*/
+  --dark-blue: hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+
+  /* Neutral colors*/
+  /*(main heading, stats)*/
+  --white: hsl(0, 0%, 100%);
+  /*main paragraph*/
+  --slightly-transparent-white: hsla(0, 0%, 100%, 0.75);
+
+  --main-background-color: var(--dark-blue);
+  --accent-color: var(--soft-violet);
+
+  --regular-text-size: 15px;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  font-size: var(--regular-text-size);
+}
+
+h1 {
+  color: var(--white);
+  line-height: 2rem;
+}
+
+p {
+  color: var(--slightly-transparent-white);
+  line-height: 1.4rem;
+}
+
+h1,
+h2,
+p {
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  padding: 5%;
+  background-color: var(--main-background-color);
+}
+
+.container {
+  width: 100%;
+  margin: 7% auto;
+  background-color: var(--desaturated-blue);
+  border-radius: 15px;
+}
+
+.container img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  filter: opacity(0.4) drop-shadow(0 0 0 var(--soft-violet));
+}
+
+.container,
+.wrapper,
+.stats {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  align-items: center;
+  margin: 1.5rem 0 0;
+}
+
+.wrapper > p {
+  text-indent: 1rem;
+  margin: 1.5rem 0 0;
+}
+
+.stats {
+  width: 100%;
+  margin: 2rem 0 0;
+}
+
+.stats > div {
+  color: var(--white);
+  align-items: center;
+  margin: 1rem 0 0;
+  width: 100%;
+  text-transform: uppercase;
+}
+.stats p {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+}
+
+.accent {
+  color: var(--accent-color);
+}
+
+.attribution {
+  color: var(--white);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 670px) {
+  .container {
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 350px;
+    max-width: 850px;
+  }
+  .container img {
+    border-radius: 0 15px 15px 0;
+    content: url("./images/image-header-desktop.jpg");
+  }
+  .container img,
+  .wrapper {
+    width: 50%;
+  }
+  .stats {
+    flex-direction: row;
+  }
+}
